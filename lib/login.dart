@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:fyp/createprofile.dart';
 
 class loginScreen extends StatefulWidget {
   const loginScreen({super.key});
@@ -39,7 +40,9 @@ class _loginScreenState extends State<loginScreen> {
       ),
   ),
   SizedBox(height: 40,),
-  ElevatedButton(onPressed: (){}, child:Text('Login'))
+  ElevatedButton(onPressed: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => profileScreen()));
+  }, child:Text('Login'))
       
 
 
