@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:fyp/dashboard.dart';
 
 
 class profileScreen extends StatefulWidget {
@@ -14,6 +15,7 @@ class profileScreen extends StatefulWidget {
 }
 
 class _profileScreenState extends State<profileScreen> {
+  String? gender;
   // String skillsname = "";
   // TextEditingController controller = new TextEditingController();
   // List<String> skillsList = ["1","2","3","4","5","6"];
@@ -26,12 +28,13 @@ class _profileScreenState extends State<profileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.purple,
         title: Text('Create Profile'),centerTitle: true,),
         body: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
+      child: Column (
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
       TextFormField(
@@ -103,11 +106,19 @@ class _profileScreenState extends State<profileScreen> {
   ),
   Row(
     children: [
-      Radio(value:1, groupValue: 0, onChanged: (Value){},
+      Radio(value:"Male", groupValue: gender, onChanged: (Value){
+        setState(() {
+          gender=Value.toString();
+        });
+      },
       ),
       SizedBox(width: 10.0,),
       Text('Male'),
-        Radio(value:2, groupValue: 0, onChanged: (Value){},
+        Radio(value:"Female", groupValue: gender, onChanged: (Value){
+          setState(() {
+          gender=Value.toString();
+        });
+        },
     ),
     SizedBox(width: 10.0,),
     Text('Female'),
@@ -149,6 +160,7 @@ class _profileScreenState extends State<profileScreen> {
       SizedBox(height: 40,),
   ElevatedButton(onPressed: (){
    // Navigator.of(context).push(MaterialPageRoute(builder: (context) => loginScreen()));
+   Navigator.of(context).push(MaterialPageRoute(builder: (context) => dashBoard()));
   }, child:Text('Submit'))
     
       // Container(
