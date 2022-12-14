@@ -4,6 +4,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:fyp/dashboard.dart';
+import 'package:fyp/homepage.dart';
+import 'package:fyp/jobseeker.dart';
 
 
 class profileScreen extends StatefulWidget {
@@ -46,8 +48,7 @@ class _profileScreenState extends State<profileScreen> {
         SizedBox(height: 20,),
   Center(
       child: TextFormField(
-      obscureText:true
-    ,
+    
        decoration: const InputDecoration(
           border: UnderlineInputBorder(),
           labelText: 'Last Name',
@@ -160,7 +161,7 @@ class _profileScreenState extends State<profileScreen> {
       SizedBox(height: 40,),
   ElevatedButton(onPressed: (){
    // Navigator.of(context).push(MaterialPageRoute(builder: (context) => loginScreen()));
-   Navigator.of(context).push(MaterialPageRoute(builder: (context) => dashBoard()));
+   Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
   }, child:Text('Submit'))
     
       // Container(
