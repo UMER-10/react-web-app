@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
           margin: const EdgeInsets.only(left: 35),
           child: GestureDetector(
             onTap: () {},
+            
             child: SvgPicture.asset(
               "assets/images/ic_menu.svg",
               width: 10,
@@ -140,65 +141,95 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildSearch() {
     return Container(
-      margin: const EdgeInsets.only(left: 20, right: 20, top: 35),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            flex: 4,
-            child: Container(
-              height: 55,
-              padding: const EdgeInsets.only(left: 15, top: 15, bottom: 15),
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(12)),
-                color: Color(0xffE8E8E8),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Expanded(
-                    flex: 1,
-                    child: Icon(
-                      Icons.search,
-                      size: 25,
+       child: Padding(
+         padding: const EdgeInsets.all(.0),
+         child: Padding(
+           padding: const EdgeInsets.all(20.0),
+           child: Column(
+              children: [
+                TextField(
+                 // onChanged: (value) => _runFilter(value),
+                  decoration: InputDecoration(
+                    contentPadding:
+                        const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
+                    hintText: "Search",
+                    suffixIcon: const Icon(Icons.search),
+                    // prefix: Icon(Icons.search),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                      borderSide: const BorderSide(),
                     ),
-                  ),
-                  Expanded(
-                    flex: 6,
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 5, right: 10),
-                      child: Text(
-                        'Search for items here',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: GoogleFonts.roboto().fontFamily,
                         ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              margin: const EdgeInsets.only(left: 10),
-              padding: const EdgeInsets.only(top: 16, bottom: 17),
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(12)),
-                color: Colors.black,
-              ),
-              child: SvgPicture.asset(
-                "assets/images/ic_filter.svg",
-              ),
-            ),
-          )
-        ],
-      ),
-    );
+                
+  //     margin: const EdgeInsets.only(left: 20, right: 20, top: 35),
+  //     child: Row(
+  //       mainAxisAlignment: MainAxisAlignment.start,
+  //       crossAxisAlignment: CrossAxisAlignment.start,
+  //       children: [
+  //         Expanded(
+  //           flex: 4,
+  //           child: Container(
+  //             height: 55,
+  //             padding: const EdgeInsets.only(left: 15, top: 15, bottom: 15),
+  //             decoration: const BoxDecoration(
+  //               borderRadius: BorderRadius.all(Radius.circular(12)),
+  //               color: Color(0xffE8E8E8),
+  //             ),
+  //             child: Row(
+  //               crossAxisAlignment: CrossAxisAlignment.center,
+  //               mainAxisAlignment: MainAxisAlignment.start,
+  //               children: [
+                      
+  //           TextField(
+  //            // onChanged: (value) => _runFilter(value),
+  //             decoration: InputDecoration(
+  //               contentPadding:
+  //                   const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
+  //               hintText: "Search",
+  //               suffixIcon: const Icon(Icons.search),
+  //               // prefix: Icon(Icons.search),
+  //               border: OutlineInputBorder(
+  //                 borderRadius: BorderRadius.circular(20.0),
+  //                 borderSide: const BorderSide(),
+  //               ),
+  //             ),
+  //           ),
+  //                 Expanded(
+  //                   flex: 6,
+  //                   child: Container(
+  //                     margin: const EdgeInsets.only(left: 5, right: 10),
+  //                     child: Text(
+  //                       'Search for items here',
+  //                       style: TextStyle(
+  //                         fontSize: 16,
+  //                         fontFamily: GoogleFonts.roboto().fontFamily,
+  //                       ),
+  //                     ),
+  //                   ),
+  //                 ),
+  //               ],
+  //             ),
+  //           ),
+  //         ),
+  //         Expanded(
+  //           flex: 1,
+  //           child: Container(
+  //             margin: const EdgeInsets.only(left: 10),
+  //             padding: const EdgeInsets.only(top: 16, bottom: 17),
+  //             decoration: const BoxDecoration(
+  //               borderRadius: BorderRadius.all(Radius.circular(12)),
+  //               color: Colors.black,
+  //             ),
+  //             child: SvgPicture.asset(
+  //               "assets/images/ic_filter.svg",
+  //             ),
+  //           ),
+               )
+             ],
+           ),
+         ),
+       ),
+     );
   }
 
   Widget buildCategories() {
