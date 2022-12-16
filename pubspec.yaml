@@ -45,6 +45,8 @@ dependencies:
   dependencies:
   color: any
   lottie: ^2.0.0
+  sizer: ^2.0.15
+  intl: ^0.18.0
   
   
 

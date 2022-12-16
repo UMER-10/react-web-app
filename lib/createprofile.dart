@@ -6,6 +6,7 @@ import 'package:country_code_picker/country_code_picker.dart';
 import 'package:fyp/dashboard.dart';
 import 'package:fyp/homepage.dart';
 import 'package:fyp/jobseeker.dart';
+import 'package:intl/intl.dart';
 
 
 class profileScreen extends StatefulWidget {
@@ -27,6 +28,7 @@ class _profileScreenState extends State<profileScreen> {
   // List listitem = [
   //   "item1","item2","item3","item4","item5",
   // ];
+ TextEditingController _date = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,13 +95,27 @@ class _profileScreenState extends State<profileScreen> {
     ],
   ),
   Container(
-    height: 30,
-    width: 300,
+    padding: const EdgeInsets.all(30.0),
+    //height: 30,
+    //width: 300,
     //color: Colors.amber,
     child:TextFormField(
+      controller: _date,
      decoration: const InputDecoration(
-      hintText: 'D.O.B',
-     ),
+      icon: Icon(Icons.calendar_today_rounded),
+      labelText: 'D.O.B',),
+    onTap: () async {
+        DateTime? pickedddate = await showDatePicker(
+        context: context, 
+        initialDate: DateTime.now(), 
+        firstDate: DateTime(2000), 
+        lastDate: DateTime(2101));
+        if(pickedddate != null){
+          setState(() {
+        _date.text = DateFormat('dd-MM-yyyy').format(pickedddate);
+                  });
+        }
+    },
     ),
     
 
