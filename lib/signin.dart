@@ -16,7 +16,7 @@ class _MyLoginState extends State<MyLogin> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/images/login.png'), fit: BoxFit.cover),
+            image: AssetImage('assets/images/background-2.png'), fit: BoxFit.cover),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -26,7 +26,7 @@ class _MyLoginState extends State<MyLogin> {
             Container(
               padding: EdgeInsets.only(left: 35, top: 130),
               child: Text(
-                'Welcome\nBack',
+                'Welcome\nBack to Jobsee\nApplication',
                 style: TextStyle(color: Colors.white, fontSize: 33),
               ),
             ),
@@ -44,9 +44,24 @@ class _MyLoginState extends State<MyLogin> {
                           TextField(
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                                fillColor: Colors.grey.shade100,
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                  focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                fillColor: Colors.transparent,
                                 filled: true,
                                 hintText: "Email",
+                                hintStyle: TextStyle(color: Colors.white),
+                                prefixIcon: Icon(Icons.email),
+
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
@@ -55,12 +70,30 @@ class _MyLoginState extends State<MyLogin> {
                             height: 30,
                           ),
                           TextField(
+                            
                             style: TextStyle(),
                             obscureText: true,
+                            
                             decoration: InputDecoration(
-                                fillColor: Colors.grey.shade100,
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                 focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                fillColor: Colors.transparent,
                                 filled: true,
                                 hintText: "Password",
+                                hintStyle: TextStyle(color: Colors.white),
+
+                                prefixIcon: Icon(Icons.lock),
+
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
@@ -107,7 +140,7 @@ class _MyLoginState extends State<MyLogin> {
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,
-                                      color: Color(0xff4c505b),
+                                      color: Colors.white,
                                       fontSize: 18),
                                 ),
                                 style: ButtonStyle(),
@@ -119,7 +152,7 @@ class _MyLoginState extends State<MyLogin> {
                                     'Forgot Password',
                                     style: TextStyle(
                                       decoration: TextDecoration.underline,
-                                      color: Color(0xff4c505b),
+                                      color: Colors.white,
                                       fontSize: 18,
                                     ),
                                   )),

@@ -19,50 +19,99 @@ class profileScreen extends StatefulWidget {
 
 class _profileScreenState extends State<profileScreen> {
   String? gender;
-  // String skillsname = "";
-  // TextEditingController controller = new TextEditingController();
-  // List<String> skillsList = ["1","2","3","4","5","6"];
-  // var skills = ['front end developer','back end developer','Database Analytics'];
-  // var _CurrentItemSelected= 'Ruppes';
-  // final String valueChoose;
-  // List listitem = [
-  //   "item1","item2","item3","item4","item5",
-  // ];
  TextEditingController _date = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        
         backgroundColor: Colors.purple,
         title: Text('Create Profile'),centerTitle: true,),
+      
         body: Padding(
+      
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column (
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-      TextFormField(
-  decoration: const InputDecoration(
-      border: UnderlineInputBorder(),
-      labelText: 'First Name',
-  ),
-      ),
-        SizedBox(height: 20,),
-  Center(
-      child: TextFormField(
+          TextField(
+                            style: TextStyle(color: Colors.black),
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.purple,
+                                  ),
+                                ),
+                                hintText: "First Name",
+                                hintStyle: TextStyle(color: Colors.black),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          TextField(
+                            style: TextStyle(color: Colors.black),
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.purple,
+                                  ),
+                                ),
+                                hintText: "Last Name",
+                                hintStyle: TextStyle(color: Colors.black),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                          ),
+  //     TextField(
+  // decoration: const InputDecoration(
+  //     enabledBorder: OutlineInputBorder(
+        
+  //     ),
+  //     labelText: 'First Name',
+  // ),
+  //     ),
+  //       SizedBox(height: 20,),
+  // Center(
+  //     child: TextFormField(
     
-       decoration: const InputDecoration(
-          border: UnderlineInputBorder(),
-          labelText: 'Last Name',
-        ),
-      ),
+  //      decoration: const InputDecoration(
+  //         border: UnderlineInputBorder(),
+  //         labelText: 'Last Name',
+  //       ),
+  //     ),
   
-    ),  
+  //   ),  
+  
+  
 
   Row(
+    
+
     children: [
+      
       CountryCodePicker(
+        
         initialSelection: 'PAKISTAN',
+        
         // showCountryOnly: false,
         // showOnlyCountryWhenClosed: false,
         favorite: ['+92','PAK'],
@@ -78,10 +127,11 @@ class _profileScreenState extends State<profileScreen> {
 
 
       ),
+
   
       Container(
-        height: 30,
-        width: 200,
+        height: 25,
+        width: 220,
         //color: Colors.amber,
         child: TextFormField(
        decoration: const InputDecoration(
@@ -95,11 +145,11 @@ class _profileScreenState extends State<profileScreen> {
     ],
   ),
   Container(
-    padding: const EdgeInsets.all(30.0),
+    padding: const EdgeInsets.all(5.0),
     //height: 30,
     //width: 300,
     //color: Colors.amber,
-    child:TextFormField(
+    child:TextField(
       controller: _date,
      decoration: const InputDecoration(
       icon: Icon(Icons.calendar_today_rounded),
@@ -130,7 +180,8 @@ class _profileScreenState extends State<profileScreen> {
       },
       ),
       SizedBox(width: 10.0,),
-      Text('Male'),
+      Text('Male',
+      style: TextStyle(color: Colors.black),),
         Radio(value:"Female", groupValue: gender, onChanged: (Value){
           setState(() {
           gender=Value.toString();
@@ -138,47 +189,143 @@ class _profileScreenState extends State<profileScreen> {
         },
     ),
     SizedBox(width: 10.0,),
-    Text('Female'),
+    Text('Female',
+          style: TextStyle(color: Colors.black),),
+
     ],),
       Container(
-    height: 30,
-    width: 300,
-    //color: Colors.amber,
-    child:TextFormField(
-     decoration: const InputDecoration(
-      hintText: 'Home Address',
-     ),
-    ),
-    
+    height: 20,
+    width: 250,
       ),
-      SizedBox(height: 20,),
+                          TextField(
+                            style: TextStyle(color: Colors.black),
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.purple,
+                                  ),
+                                ),
+                                hintText: "Home Address",
+                                hintStyle: TextStyle(color: Colors.black),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                          ),
+    //color: Colors.amber,
+    // child:
+    // TextFormField(
+    //  decoration: const InputDecoration(
+    //   hintText: 'Home Address',
+    //  ),
+    // ),
+    
+      
+      SizedBox(height: 10,),
        Container(
-    height: 30,
-    width: 300,
+    //height: 30,
+    //width: 300,
     //color: Colors.amber,
-    child:TextFormField(
-     decoration: const InputDecoration(
-      hintText: 'Education',
-     ),
-    ),
+    child:
+    TextField(
+                            style: TextStyle(color: Colors.black),
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.purple,
+                                  ),
+                                ),
+                                hintText: "Education",
+                                hintStyle: TextStyle(color: Colors.black),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                          ),
+    // TextFormField(
+    //  decoration: const InputDecoration(
+    //   hintText: 'Education',
+    //  ),
+    // ),
     
       ),
+            SizedBox(height: 10,),
+
         Container(
-    height: 60,
-    width: 300,
+    //height: 60,
+    //width: 300,
     //color: Colors.amber,
-    child:TextFormField(
-     decoration: const InputDecoration(
-      hintText: 'Skills',
-     ),
-    ),
+    child:
+    // TextFormField(
+    //  decoration: const InputDecoration(
+    //   hintText: 'Skills',
+    //  ),
+    // ),
+    TextField(
+                            style: TextStyle(color: Colors.black),
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.purple,
+                                  ),
+                                ),
+                                hintText: "Skills",
+                                hintStyle: TextStyle(color: Colors.black),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                          ),
     
       ),
-      SizedBox(height: 40,),
-  ElevatedButton(onPressed: (){
-   // Navigator.of(context).push(MaterialPageRoute(builder: (context) => loginScreen()));
-   Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
-  }, child:Text('Submit'))
+      SizedBox(height: 10,),
+       Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Submit',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 27,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                              CircleAvatar(
+                                radius: 25,
+                                backgroundColor: Color(0xff4c505b),
+                                child: IconButton(
+                                    color: Colors.white,
+                                    onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+
+                                    },
+                                    icon: Icon(
+                                      Icons.arrow_forward,
+                                    )),
+                              )
+                            ],
+                          ),
+  // ElevatedButton(onPressed: (){
+  //  // Navigator.of(context).push(MaterialPageRoute(builder: (context) => loginScreen()));
+  //  Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+  // }, child:Text('Submit'))
     
       // Container(
       //   width: 130,

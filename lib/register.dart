@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fyp/createprofile.dart';
+import 'package:fyp/signin.dart';
 
 class MyRegister extends StatefulWidget {
   const MyRegister({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _MyRegisterState extends State<MyRegister> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/images/register.png'), fit: BoxFit.cover),
+            image: AssetImage('assets/images/background.png'), fit: BoxFit.cover),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -61,6 +62,7 @@ class _MyRegisterState extends State<MyRegister> {
                                   ),
                                 ),
                                 hintText: "Email",
+                               prefixIcon: Icon(Icons.email),
                                 hintStyle: TextStyle(color: Colors.white),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -86,6 +88,8 @@ class _MyRegisterState extends State<MyRegister> {
                                   ),
                                 ),
                                 hintText: "Password",
+                                prefixIcon: Icon(Icons.lock),
+
                                 hintStyle: TextStyle(color: Colors.white),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -127,15 +131,18 @@ class _MyRegisterState extends State<MyRegister> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'login');
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyLogin()));
+
                                 },
+                                
+                                
                                 child: Text(
                                   'Sign In',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,
                                       color: Colors.white,
-                                      fontSize: 18),
+                                      fontSize: 20),
                                 ),
                                 style: ButtonStyle(),
                               ),
