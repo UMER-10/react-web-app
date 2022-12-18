@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fyp/allJob.dart';
+import 'package:fyp/dashboard.dart';
 import 'package:fyp/jobseeker.dart';
 import 'package:fyp/profilePage.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,35 +19,105 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+          resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Container(
-          margin: const EdgeInsets.only(left: 35),
-          child: GestureDetector(
-            onTap: () {},
+        backgroundColor: Colors.purple,
+        title: Text("Find a perfect job",
+        ),centerTitle: true,
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+
+              UserAccountsDrawerHeader(
+                accountName: Text("Mubashir Iqbal"),
+                 accountEmail:Text(" mubashiri639@gmail.com"),
+                 currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Text(
+                  "MM",
+                  style: TextStyle(fontSize: 25.0),
+                 ),
+                 ),
+                 ),
+                 ListTile(leading: Icon(Icons.home),
+                 title: Text("Home"),
+                 trailing: Icon(Icons.arrow_forward_ios_rounded
+                 ),
+                 ),
+                 ListTile(leading: Icon(Icons.person),
+                 title: Text("Profile"),
+                 onTap: null,
+                 trailing: Icon(Icons.arrow_forward_ios_rounded
+                 ),
+                 ),
+                 ListTile(leading: Icon(Icons.notifications),
+                 title: Text("Notification"),
+                 trailing: Icon(Icons.arrow_forward_ios_rounded
+                 ),
+                 ),
+                 ListTile(leading: Icon(Icons.contact_page),
+                 title: Text("Contact Us"),
+                 trailing: Icon(Icons.arrow_forward_ios_rounded
+                 ),
+                 ),
+                 ListTile(leading: Icon(Icons.help_center),
+                 title: Text("Help Center"),
+                 trailing: Icon(Icons.arrow_forward_ios_rounded
+                 ),
+                 ),
+                 ListTile(leading: Icon(Icons.favorite),
+                 title: Text("Review & Rating"),
+                 trailing: Icon(Icons.arrow_forward_ios_rounded
+                 ),
+                 ),
+                 
+                 ListTile(leading: Icon(Icons.settings),
+                 title: Text("Settings"),
+                 trailing: Icon(Icons.arrow_forward_ios_rounded
+                 ),
+                 ),
+                 ListTile(leading: Icon(Icons.logout),
+                 title: Text("Logut"),
+                 trailing: Icon(Icons.arrow_forward_ios_rounded
+                 ),
+                 ),
+
+            ],
+          ),
+        ),
+      // backgroundColor: Colors.white,
+      // appBar: AppBar(
+      //   backgroundColor: Colors.transparent,
+      //   elevation: 0,
+      //   leading: Container(
+      //     margin: const EdgeInsets.only(left: 35),
+      //     child: GestureDetector(
+      //       onTap: () {
+      //    Navigator.of(context).push(MaterialPageRoute(builder: (context) => dashBoard()));
+
+      //       },
             
-            child: SvgPicture.asset(
-              "assets/images/ic_menu.svg",
-              width: 10,
-              height: 10,
-            )
-          ),
-        ),
-        title: const Text(
-          "Find a perfect job",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
-        ),
-      ),
-      body: SafeArea(
+      //       child: SvgPicture.asset(
+      //         "assets/images/ic_menu.svg",
+      //         width: 10,
+      //         height: 10,
+      //       )
+      //     ),
+      //   ),
+      //   title: const Text(
+      //     "Find a perfect job",
+      //     style: TextStyle(
+      //       fontWeight: FontWeight.bold,
+      //       color: Colors.black,
+      //     ),
+      //   ),
+      // ),
+       body: SafeArea(
         child: SingleChildScrollView(
           child: initWidget(),
-        ),
-      ),
+         ),
+       ),
     );
   }
 
